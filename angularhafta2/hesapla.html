@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html ng-app="hesapmodule">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/repeatScript.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <script src="Scripts/hesapla.js"></script>
+</head>
+<body ng-controller="kontrolur">
+    <table class="table table-striped table-bordered">
+
+        <tbody>
+            <tr>
+                <td>1.sayıyı giriniz</td>
+                <td><input type="number" min="5" max="10" step="1" ng-model="sayi1" /></td>
+            </tr>
+            <tr>
+                <td>2.sayıyı giriniz</td>
+                <td><input type="number" min="5" max="10" step="1" ng-model="sayi2" /></td>
+            </tr>
+            <tr>
+                <td><input type="button" ng-click="topla()" value="topla" /></td> 
+                <td><input type="button" ng-click="carp()" value="carp" /></td>                
+            </tr>
+            <tr>
+                <td>sonuc</td>
+                <td>{{sonuc}}</td>
+           </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html ng-app="repeatmodule">
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/repeatScript.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+<body ng-controller="kontrolur">
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Listelenecek satır sayısı</span>
+        </div>
+        <input type="number" min="0" max="4" step="1" ng-model="satirsayisi" placeholder="satırsayı gir"  />
+    </div>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>İsim</th>
+                <th>Soyisim</th>
+                <th>Maaş para</th>
+                <th>Maaş numver</th>
+                <th>Cinsiyete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="isci in isciler|limitTo:satirsayisi">
+                <td> {{isci.name|lowercase}}</td>
+                <td> {{isci.soyname|uppercase}}</td>
+                <td> {{isci.maas|currency:"tl "}}</td>
+                <td> {{isci.maas|number:2}}</td>
+                <td> {{isci.cinsiyete}}</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
